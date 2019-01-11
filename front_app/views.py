@@ -29,7 +29,7 @@ def Login(request):
 # @login_required(login_url="/")
 class Index_List(ListView):
     model = Host
-    template_name = 'base.html'
+    template_name = 'index.html'
     paginate_by = 5
     queryset = Host.objects.all().order_by('-host_id')
 

@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html>
-{% load staticfiles %}
-
-<link href="{%static "css/adstyle.css" %}" rel="stylesheet" type="text/css" />
-<!-- 引入 ECharts 文件 -->
-<script src="{%static "js/echarts.js" %}"></script>
-{% include "header.html" %}
-{% include 'menu.html' %}
-{% csrf_token %}
-<body>
+{% extends 'base.html' %}
+{% block content %}
 <div class="home">
     <div class="home_right">
-        <div class="homepage">
-            <div class="ptbt"><a>运维平台</a></div>
-            <div class="pagename"><a>监控主机信息</a></div>
-            <div class="dangqianweizhi"><a>首页 > 监控系统 > 监控</a></div>
-        </div>
         <div class="user_hr">
         </div>
         <div class="user_list">
@@ -29,14 +15,14 @@
                             {% csrf_token %}
                             <label class="col-sm-1 control-label" style="margin-top:10px">主机名：</label>
                             <div class="col-sm-2">
-                                {{ monitorform.monitorHost }}
+                                {{ host_list.host_name }}
                             </div>
                             <div class="col-sm-1 col-sm-offset-2"  style="margin-left:0">
                                 <button type="submit" class="btn btn-primary" id="search_btn">查询</button>
                             </div>
                         </form>
                         <div class="col-sm-4" style="float: right;margin-top: 10px;">
-                            <a>Number Of Hosts: {{ host_num }}</a>
+                            <a>Number Of Hosts: {{ object_list.count}}</a>
                         </div>
                     </div>
                 </div>
@@ -212,5 +198,4 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+{% endblock %}
