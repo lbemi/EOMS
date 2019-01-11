@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<meta charset="utf-8" />
+<!-- 通用样式 -->
+<link rel="stylesheet" type="text/css" href="{% static "css/public.css" %}">
+<!-- 动态菜单CSS -->
+<link rel="stylesheet" type="text/css" href="{% static "css/menu.css" %}">
+<!-- jquery引入 -->
+<script src="{% static "js/jquery.min.js" %}"></script>
+<!-- 动态菜单JS -->
+<script type="text/javascript" src="{% static "js/menu.js" %}"></script>
+<div class="middle">
+	<div class="leftMenu">
+		<div class="topMenu">
+			<img class="banshi" src="{% static "img/banshidating.png" %}"/>
+			<p class="menuTitle">运维管理平台</p>
+		</div>
+		<div class="menu_list">
+			<ul>
+				<li class="">
+					<p class="fuMenu"><a href="{% url 'index' %}">首页</a></p>
+				</li>
+				<li class="">
+					<p class="fuMenu">主机管理</p>
+					<img class="xiala" src="{% static "img/xiala.png" %}" />
+					<div class="div1">
+                        <p class="zcd" id="zcd10"><a href="#">主机列表</a></p>
+                        <p class="zcd" id="zcd11"><a href="#">添加主机</a></p>
+					</div>
+				</li>
+				<li class="">
+					<p class="fuMenu">服务管理</p>
+					<img class="xiala" src="{% static "img/xiala.png" %}" />
+					<div class="div1">
+                        <p class="zcd" id="zcd10"><a href="#">服务列表</a></p>
+                        <p class="zcd" id="zcd11"><a href="#">添加服务</a></p>
+					</div>
+				</li>
+				<li class="">
+					<p class="fuMenu">脚本管理</p>
+					<img class="xiala" src="{% static "img/xiala.png" %}" />
+					<div class="div1">
+                        <p class="zcd" id="zcd10"><a href="#">脚本列表</a></p>
+                        <p class="zcd" id="zcd11"><a href="#">添加脚本</a></p>
+					</div>
+				</li>
+				<li class="">
+					<p class="fuMenu"><a href="{% url 'logout' %}">退出</a></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
